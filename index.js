@@ -1,13 +1,15 @@
 const express = require('express');
+const cors = require("cors");
 const bodyParser = require('body-parser');
 const contactRoutes = require('./view/contactRoutes');
-const cors = require('cors');
 require('./database/db')
 const app = express();
 
 // Middleware
 app.use(bodyParser.json());
-app.use(cors());
+app.use(cors({
+  origin: "https://sanny-ranjan-singh.github.io", // Your frontend URL
+}));
 
 
 app.use('/api/contact', contactRoutes);
