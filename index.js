@@ -9,6 +9,8 @@ const app = express();
 app.use(bodyParser.json());
 app.use(cors({
   origin: "https://sanny-ranjan-singh.github.io", // Your frontend URL
+  methods: 'GET,POST', // Specify allowed methods
+  allowedHeaders: 'Content-Type,Authorization',
 }));
 
 
